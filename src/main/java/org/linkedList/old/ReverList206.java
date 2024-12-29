@@ -1,4 +1,6 @@
-package org.linkedList;
+package org.linkedList.old;
+
+import org.linkedList.ListNode;
 
 import java.util.Collections;
 import java.util.LinkedList;

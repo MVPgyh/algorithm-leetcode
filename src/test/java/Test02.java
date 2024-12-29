@@ -45,4 +45,17 @@ public class Test02 {
         int b= a;
         System.out.println(b);
     }
+
+    @Test
+    public  void  test03(){
+        char a='9';
+        int b=a-'2';
+        System.out.println(b);
+    }
+
+    @Test
+    public  void  test04(){
+        int a=8;
+        System.out.println(a >> 1);
+    }
 }

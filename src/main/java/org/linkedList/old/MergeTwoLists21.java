@@ -1,4 +1,6 @@
-package org.linkedList;
+package org.linkedList.old;
+
+import org.linkedList.ListNode;
 
 public class MergeTwoLists21 {
     //循环加双指针法 最高效的
