@@ -1,8 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.*;
 
 /**
  * @Author pudding
@@ -57,5 +56,32 @@ public class Test02 {
     public  void  test04(){
         int a=8;
         System.out.println(a >> 1);
+        Character b='航';
+        char c='航';
+        System.out.println(b==c);
+
+        Integer d=121;
+        Integer f=121;
+        System.out.println(d==f);
+
+        ArrayList<Object> objects = new ArrayList<>();
+        objects.add("2121");
+        objects.add(212);
+        System.out.println(objects.get(objects.size()-1));
+
+    }
+
+    @Test
+    public  void  queueTest(){
+        Queue<String> objects = new LinkedList<>();
+        objects.add("armani");
+        objects.add("spore");
+        objects.add("athna");
+        System.out.println(objects.peek());
+        System.out.println(objects.poll());
+        System.out.println(objects.poll());
+        System.out.println(objects.poll());
+        System.out.println(objects.poll());
+        System.out.println(objects);
     }
 }
