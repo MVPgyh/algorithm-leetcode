@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 import java.util.*;
+import java.util.function.UnaryOperator;
 
 /**
  * @Author pudding
@@ -73,15 +74,38 @@ public class Test02 {
 
     @Test
     public  void  queueTest(){
-        Queue<String> objects = new LinkedList<>();
-        objects.add("armani");
-        objects.add("spore");
-        objects.add("athna");
-        System.out.println(objects.peek());
-        System.out.println(objects.poll());
-        System.out.println(objects.poll());
-        System.out.println(objects.poll());
-        System.out.println(objects.poll());
-        System.out.println(objects);
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,53,43,53,10));
+        System.out.println(list);
+        /*-1 交换位置 0 和1 不交换位置  o1-o2 正序排列 o1-o2倒叙排列 */
+        list.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (o1 == o2) {
+                    return o1-o2;
+                }
+                return o2-o1;
+            }
+        });
+        System.out.println(list);
+    }
+
+    @Test
+    public  void  queueTest1(){
+        ArrayList<Character> list = new ArrayList<>();
+        list.add('a');
+        list.add('c');
+        list.add('b');
+        list.add('z');
+        list.add('x');
+        list.sort(new Comparator<Character>() {
+            @Override
+            public int compare(Character o1, Character o2) {
+                if (o1 != o2) {
+                    return o2-o1;
+                }
+                return 1;
+            }
+        });
+        System.out.println(list);
     }
 }
