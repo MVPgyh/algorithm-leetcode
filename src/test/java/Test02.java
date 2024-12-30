@@ -124,5 +124,16 @@ public class Test02 {
 
         System.out.println('C'-'A');
 
+
+    }
+
+    @Test
+    public  void  sqrtTest(){
+        int a=-1;
+        System.out.println(a>>>1);
+        System.out.println(Integer.MAX_VALUE);
+
+        double exp = Math.exp(2);
+        System.out.println(exp);
     }
 }

@@ -7,7 +7,7 @@ package org.math;
  */
 public class AddBinary {
     public static void main(String[] args) {
-        addBinary("101001010", "101000010");
+        addBinary("11", "1");
     }
 
     public static String addBinary(String a, String b) {
