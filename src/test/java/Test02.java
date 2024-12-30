@@ -108,4 +108,21 @@ public class Test02 {
         });
         System.out.println(list);
     }
+    @Test
+    public  void  queueTest2(){
+        /*int abs = Math.abs(Integer.MIN_VALUE);
+        int minValue = Integer.MIN_VALUE;
+        int a=minValue*200023;
+        System.out.println(a);
+        System.out.println("------------");
+        StringBuffer buffer = new StringBuffer();
+        buffer.insert(0,"121");
+        System.out.println(buffer.toString());*/
+        char a=100;
+        char b=97;
+        System.out.println(a+1);
+
+        System.out.println('C'-'A');
+
+    }
 }
