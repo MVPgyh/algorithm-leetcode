@@ -56,6 +56,7 @@ public class MinimumDeletions {
 
     }
 
+    /*官网解法*/
     public int minimumDeletions1(int[] nums) {
         int minIdx=0,maxIdx=0;
         for (int i = 1; i < nums.length; i++) {
