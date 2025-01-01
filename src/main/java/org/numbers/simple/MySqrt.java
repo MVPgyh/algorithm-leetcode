@@ -16,6 +16,7 @@ public class MySqrt {
             int i2 = (i + 1) * (i + 1);
             if (i1 == x || (i1 < x && i2 > x)) {
                 return i;
+
             }
         }
     }
