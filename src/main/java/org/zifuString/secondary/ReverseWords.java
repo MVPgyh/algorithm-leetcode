@@ -9,13 +9,10 @@ import java.util.Arrays;
  */
 public class ReverseWords {
     public String reverseWords(String s) {
-        String[] split = s.split(" ");
+        String[] split = s.split("\\s+");
         int len = split.length;
         StringBuffer res = new StringBuffer();
-        System.out.println(Arrays.toString(split));
-        System.out.println(split.length);
         for (int i = len - 1; i >= 0; i--) {
-            System.out.println(split[i]==" ");
             if (split[i] != " ") {
                 res.append(split[i]+" ");
             }
@@ -25,6 +22,6 @@ public class ReverseWords {
 
     public static void main(String[] args) {
         ReverseWords reverseWords = new ReverseWords();
-        System.out.println(reverseWords.reverseWords("a good   example"));
+        System.out.println(reverseWords.reverseWords("a    good     example"));
     }
 }
