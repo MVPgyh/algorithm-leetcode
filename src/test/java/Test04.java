@@ -24,4 +24,20 @@ public class Test04 {
         System.out.println(d);
         System.out.println(c);
     }
+
+    @Test
+    void  test05(){
+        Year year = new Year(2025);
+        year.setEveryThing("bad");
+        year.setSucceed(false);
+        updateYear(year);
+        System.out.println(year.getEveryThing());
+        System.out.println(year.isSucceed());
+
+    }
+
+    public void updateYear(Year year) {
+        year.setSucceed(true);
+        year.setEveryThing("good");
+    }
 }

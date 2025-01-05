@@ -30,7 +30,7 @@ public class ReverList206 {
         }
         return ans;
     }
-    //迭代
+    //迭代 双指针
     public static ListNode reverseList1(ListNode head) {
         ListNode prev=null;
         ListNode curr=head;
