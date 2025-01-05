@@ -27,12 +27,11 @@ public class Test04 {
 
     @Test
     void  test05(){
-        Year year = new Year(2025);
-        year.setEveryThing("bad");
-        year.setSucceed(false);
-        updateYear(year);
-        System.out.println(year.getEveryThing());
-        System.out.println(year.isSucceed());
+        String s="the sky is    blue";
+        System.out.println(Arrays.toString(s.split(" ")));
+        System.out.println(s.split(" ").length);
+
+
 
     }
 
