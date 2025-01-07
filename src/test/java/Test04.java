@@ -30,13 +30,16 @@ public class Test04 {
         String s="the sky is    blue";
         System.out.println(Arrays.toString(s.split(" ")));
         System.out.println(s.split(" ").length);
+        System.out.println("==========================");
+        String s1="abcd";
+        String s2="abcd";
+        System.out.println(s1.equals(s2));
 
 
 
     }
 
     public void updateYear(Year year) {
-        year.setSucceed(true);
-        year.setEveryThing("good");
+
     }
 }
