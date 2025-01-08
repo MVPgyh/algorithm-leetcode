@@ -37,4 +37,51 @@ public class MinimumTotal {
         }
         return minTotal;
     }
+
+
+
+    /*解法1：采用递归法*/
+    public int minimumTotal1(List<List<Integer>> triangle) {
+        return  dfs(triangle, 0, 0);
+    }
+
+    private int dfs(List<List<Integer>> triangle, int i, int j) {
+        /*结束条件 为到达底部*/
+        if (i == triangle.size()) {
+            return 0;
+        }
+        return Math.min(dfs(triangle, i + 1, j), dfs(triangle, i + 1, j + 1)) + triangle.get(i).get(j);
+    }
+
+    /*解法二 递归+记忆化*/
+    Integer[][] memo;
+    public int minimumTotal2(List<List<Integer>> triangle) {
+        /*创建一个triangle大小的二维数组 进行记忆*/
+        memo = new Integer[triangle.size()][triangle.size()];
+        return  dfs(triangle, 0, 0);
+    }
+
+    private int dfs2(List<List<Integer>> triangle, int i, int j) {
+        if (i == triangle.size()) {
+            return 0;
+        }
+        if (memo[i][j] != null) {
+            return memo[i][j];
+        }
+        return memo[i][j] = Math.min(dfs(triangle, i + 1, j), dfs(triangle, i + 1, j + 1)) + triangle.get(i).get(j);
+    }
+
+    /*解法三：动态规划*/
+    public int minimumTotal3(List<List<Integer>> triangle) {
+        int n = triangle.size();
+        // dp[i][j] 表示从点 (i, j) 到底边的最小路径和。
+        int[][] dp = new int[n + 1][n + 1];
+        // 从三角形的最后一行开始递推。
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                dp[i][j] = Math.min(dp[i + 1][j], dp[i + 1][j + 1]) + triangle.get(i).get(j);
+            }
+        }
+        return dp[0][0];
+    }
 }
