@@ -34,6 +34,10 @@ public class Test04 {
         String s1="abcd";
         String s2="abcd";
         System.out.println(s1.equals(s2));
+        System.out.println("==============");
+
+        char a='8';
+        System.out.println((int) a);
 
 
 
