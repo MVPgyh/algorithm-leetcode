@@ -41,9 +41,27 @@ public class ClimbStairs {
         return r;
     }
 
+    public int fib(int n) {
+        if (n == 1) {
+            return 1;
+        }
+        if (n == 0) {
+            return 0;
+        }
+        int[] ints = new int[n + 1];
+        ints[1]=1;
+        ints[2]=1;
+        for (int i = 3; i <=n ; i++) {
+            ints[i]=ints[i-1]+ints[i-2];
+        }
+        return ints[n];
+    }
+
 
     public static void main(String[] args) {
         ClimbStairs climbStairs = new ClimbStairs();
         System.out.println(climbStairs.climbStairs(9));
+        int fib = climbStairs.fib(1);
+        System.out.println(fib);
     }
 }
