@@ -9,6 +9,7 @@ import java.util.LinkedList;
  * @email gyh020815@outlook.com
  * @Date 2025/1/9 上午12:25
  */
+/*用栈或用数组模拟   判断是否为数字用正则表达式*/
 public class EvalRPN {
     public int evalRPN(String[] tokens) {
         Deque<Integer> stack = new LinkedList<>();
