@@ -48,6 +48,7 @@ public class ClimbStairs {
         if (n == 0) {
             return 0;
         }
+
         int[] ints = new int[n + 1];
         ints[1]=1;
         ints[2]=1;
