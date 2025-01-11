@@ -43,7 +43,12 @@ public class Test04 {
 
     }
 
-    public void updateYear(Year year) {
+    @Test
+    public void  test06(){
+        String s="[[1,3],[2,6],[8,10],[15,18]]";
+        String replace = s.replace('[', '{');
+        String res = replace.replace(']', '}');
+        System.out.println(res);
 
     }
 }
