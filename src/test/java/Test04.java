@@ -61,7 +61,7 @@ public class Test04 {
         first.next=second;
 
         ListNode temp=first;
-        System.out.println(temp.next==first.next);
+        System.out.println(temp.next.equals(first.next));
 
     }
 }
