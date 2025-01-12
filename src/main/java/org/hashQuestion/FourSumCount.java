@@ -11,7 +11,7 @@ import java.util.Map;
 /*四数相加 TODO hash经典题目*/
 public class FourSumCount {
     public int fourSumCount(int[] nums1, int[] nums2, int[] nums3, int[] nums4) {
-        Map<Integer, Integer> countAB = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> countAB = new HashMap<>();
         for (int u : nums1) {
             for (int v : nums2) {
                 countAB.put(u + v, countAB.getOrDefault(u + v, 0) + 1);
