@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.Test;
+import org.linkedList.ListNode;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Author pudding
@@ -49,6 +51,17 @@ public class Test04 {
         String replace = s.replace('[', '{');
         String res = replace.replace(']', '}');
         System.out.println(res);
+
+    }
+
+    @Test
+    public void  test07(){
+        ListNode first = new ListNode(1);
+        ListNode second = new ListNode(2);
+        first.next=second;
+
+        ListNode temp=first;
+        System.out.println(temp.next==first.next);
 
     }
 }
