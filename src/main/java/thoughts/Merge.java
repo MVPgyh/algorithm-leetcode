@@ -32,7 +32,7 @@ public class Merge {
         return merged.toArray(new int[merged.size()][]);
     }
 
-    /*快速解法*/
+    /*快速解法  时间复杂度低 自制排序*/
     public int[][] merge1(int[][] intervals) {
         int maxEnd = Integer.MIN_VALUE;
         for(int[] interval : intervals){
@@ -61,8 +61,23 @@ public class Merge {
         return result.toArray(new int[result.size()][]);
     }
 
+    /*训练*/
+    public int[][] merge2(int[][] intervals) {
+        /*按数组第一个数升序排列*/
+       Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
+        ArrayList<int[]> res = new ArrayList<>();
+        for (int i = 0; i < intervals.length; i++) {
+            int[] curr = intervals[i];
+            if (res.isEmpty() || res.get(res.size() - 1)[1]<curr[0]) {
+                res.add(curr);
+            }else {
+                res.set(res.size()-1,new int[]{res.get(res.size()-1)[0],Math.max(res.get(res.size()-1)[1],curr[1])});
+            }
+        }
+        return res.toArray(new int[res.size()][]);
+    }
     public static void main(String[] args) {
         Merge merge = new Merge();
-        System.out.println(Arrays.deepToString(merge.merge(new int[][]{{1, 3}, {2, 6}, {15, 18},{8, 10}})));
+        System.out.println(Arrays.deepToString(merge.merge2(new int[][]{{1, 3}, {2, 6}, {15, 18},{8, 10}})));
     }
 }
