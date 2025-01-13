@@ -2,7 +2,9 @@ import org.junit.jupiter.api.Test;
 import org.linkedList.ListNode;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
 
 /**
  * @Author pudding
@@ -67,9 +69,8 @@ public class Test04 {
 
     @Test
     public void  test08(){
-        for (char i = 0; i < 128; i++) {
-            System.out.println(i);
-
-        }
+        Integer[] arr={21,32,43,12,32};
+        Arrays.sort(arr, (o1, o2) -> -1);
+        System.out.println(Arrays.toString(arr));
     }
 }
