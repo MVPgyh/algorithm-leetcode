@@ -64,4 +64,12 @@ public class Test04 {
         System.out.println(temp.next.equals(first.next));
 
     }
+
+    @Test
+    public void  test08(){
+        for (char i = 0; i < 128; i++) {
+            System.out.println(i);
+
+        }
+    }
 }
