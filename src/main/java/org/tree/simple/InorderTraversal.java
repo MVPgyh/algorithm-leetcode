@@ -35,11 +35,15 @@ public class InorderTraversal {
             return result;
         }
         Stack<TreeNode> stack = new Stack<>();
+        /*当前节点为根节点*/
         TreeNode cur = root;
+        /*如果当前节点不为null或者 栈不为空 就循环*/
         while (cur != null || !stack.isEmpty()){
+            /*如果当前节点不为空 则添加到栈里面，并把当前节点设置为该节点的左节点*/
             if (cur != null){
                 stack.push(cur);
                 cur = cur.left;
+                /*如果当前节点为null了 弹出该元素 并添加到结果集里面 把向前节点设置为该节点的右节点*/
             }else{
                 cur = stack.pop();
                 result.add(cur.val);
