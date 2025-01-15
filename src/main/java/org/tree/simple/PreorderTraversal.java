@@ -60,12 +60,12 @@ public class PreorderTraversal {
         return result;
     }
 
+    /*官方解法*/
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         if (root == null) {
             return res;
         }
-
         Deque<TreeNode> stack = new LinkedList<TreeNode>();
         TreeNode node = root;
         while (!stack.isEmpty() || node != null) {

@@ -28,7 +28,7 @@ public class InorderTraversal {
         inorder(root.right, res);
     }
 
-    /*代码随想录 迭代法 中序遍历*/
+    /*代码随想录 迭代法 中序遍历  和官网的一样*/
     public List<Integer> inorderTraversal1(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null){
@@ -37,7 +37,6 @@ public class InorderTraversal {
         Stack<TreeNode> stack = new Stack<>();
         /*当前节点为根节点*/
         TreeNode cur = root;
-
         /*如果当前节点不为null或者 栈不为空 就循环*/
         while (cur != null || !stack.isEmpty()){
             /*如果当前节点不为空 则添加到栈里面，并把当前节点设置为该节点的左节点*/

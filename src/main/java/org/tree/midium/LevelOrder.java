@@ -27,10 +27,9 @@ public class LevelOrder {
     public void checkFun01(TreeNode node, Integer deep) {
         if (node == null) return;
         deep++;
-
         if (resList.size() < deep) {
             //当层级增加时，list的Item也增加，利用list的索引值进行层级界定
-            List<Integer> item = new ArrayList<Integer>();
+            List<Integer> item = new ArrayList<>();
             resList.add(item);
         }
         resList.get(deep - 1).add(node.val);
@@ -51,7 +50,7 @@ public class LevelOrder {
             List<Integer> itemList = new ArrayList<Integer>();
             int len = que.size();
 
-            /*队列长度*/
+            /*队列长度 这是添加每一层*/
             while (len > 0) {
                 TreeNode tmpNode = que.poll();
                 /*队列中添加 当前元素值*/

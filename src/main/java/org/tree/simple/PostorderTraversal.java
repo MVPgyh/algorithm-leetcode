@@ -26,7 +26,7 @@ public class PostorderTraversal {
         res.add(root.val);
     }
 
-    /*迭代法 后续遍历 左右根*/
+    /*迭代法 后续遍历 左右根 官方解法*/
     public List<Integer> postorderTraversal1(TreeNode root) {
         List<Integer> res = new ArrayList<Integer>();
         if (root == null) {
@@ -45,6 +45,7 @@ public class PostorderTraversal {
                 prev = root;
                 root = null;
             } else {
+                /*当前节点的右节点不为null再次添加队列中*/
                 stack.push(root);
                 root = root.right;
             }
