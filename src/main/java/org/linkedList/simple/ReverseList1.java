@@ -23,7 +23,7 @@ public class ReverseList1 {
         return pre;
     }
 
-    //    链表递归
+    //  官方写法  链表递归 单指针
     public ListNode reverseList1(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -34,6 +34,7 @@ public class ReverseList1 {
         return newHead;
     }
 
+    /*代码随想录 写法 本质上还是双指针*/
     public ListNode reverseList2(ListNode head) {
         return reverse(null,head);
     }

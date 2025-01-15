@@ -2,10 +2,7 @@ package org.tree.simple;
 
 import org.tree.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * @Author pudding
@@ -62,6 +59,27 @@ public class PreorderTraversal {
         }
         return result;
     }
+
+    public List<Integer> preorderTraversal2(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null) {
+            return res;
+        }
+
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        TreeNode node = root;
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                res.add(node.val);
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            node = node.right;
+        }
+        return res;
+    }
+
 
 
 }
