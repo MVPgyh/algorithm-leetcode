@@ -25,6 +25,7 @@ public class MinSubArrayLen {
 
     /*滑动窗口 TODO 滑动窗口案例 非常有必要背会*/
     public static int minSubArrayLen1(int target, int[] nums) {
+        /*idx表示滑动窗口左节点*/
         int len = nums.length, res = Integer.MAX_VALUE, idx = 0, sum = 0;
         /*循环i表示滑动窗口右边界*/
         for (int i = 0; i < len; i++) {
