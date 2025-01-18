@@ -24,7 +24,9 @@ public class MaxSubArray {
         int len = nums.length;
         int curSum = nums[0], maxSum = nums[0];
         for (int i = 1; i < len; i++) {
+            /*比较当前元素和当前和加当前元素的最大值 为当前和*/
             curSum=Math.max(nums[i],curSum+nums[i]);
+            /*结果在比较结果最大值和当前和 返回最大的*/
             maxSum=Math.max(curSum,maxSum);
 
         }
