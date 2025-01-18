@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class QuicklySort {
     public static void main(String[] args) {
         QuicklySort quicklySort = new QuicklySort();
-        System.out.println(Arrays.toString(quicklySort.sortArray(new int[]{5, 1, 1, 2, 0, 0})));
+        System.out.println(Arrays.toString(quicklySort.sortArray(new int[]{21,12,43,21,54,32,4,20})));
     }
     public int[] sortArray(int[] nums) {
         quickSort(nums,0,nums.length-1);
