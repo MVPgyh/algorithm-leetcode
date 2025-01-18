@@ -10,8 +10,7 @@ import java.util.Random;
 public class Test05 {
     @Test
     public  void test01(){
-        String s1="abcdefgef";
-        String s2="gef";
-        System.out.println(s1.startsWith(s2,6));
+        System.out.println("SD@!.;dwadw".toLowerCase());
+        System.out.println(Character.isLetter('!'));
     }
 }
