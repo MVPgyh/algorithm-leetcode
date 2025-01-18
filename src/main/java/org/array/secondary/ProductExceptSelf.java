@@ -30,34 +30,35 @@ public class ProductExceptSelf {
         int len = nums.length;
         int[] pre = new int[len];
         int[] suf = new int[len];
-        pre[0]=1;
-        suf[len-1]=1;
+        pre[0] = 1;
+        suf[len - 1] = 1;
         /*填充前缀乘积数组*/
         for (int i = 1; i < len; i++) {
-            pre[i]=pre[i-1]*nums[i-1];
+            pre[i] = pre[i - 1] * nums[i - 1];
         }
         /*填充后缀乘积数组*/
-        for (int i = len-2; i >=0; i--) {
-            suf[i]=suf[i+1]*nums[i+1];
+        for (int i = len - 2; i >= 0; i--) {
+            suf[i] = suf[i + 1] * nums[i + 1];
         }
         for (int i = 0; i < len; i++) {
-            nums[i]=pre[i]*suf[i];
+            nums[i] = pre[i] * suf[i];
         }
         return nums;
     }
 
-    /*方法二：空间复杂度 O(1) 的方法*/
+    /*方法二：空间复杂度 O(1) 的方法 删除了后缀数组 少点空间复杂度*/
     public int[] productExceptSelf2(int[] nums) {
-       int len=nums.length;
-       int[] answer=new int[len];
-       answer[0]=1;
+        int len = nums.length;
+        int[] answer = new int[len];
+        answer[0] = 1;
         for (int i = 1; i < len; i++) {
-            answer[i]=nums[i-1]*answer[i-1];
+            answer[i] = nums[i - 1] * answer[i - 1];
         }
-        int R=1;
-        for (int i = len-1; i >=0 ; i--) {
-            answer[i]=answer[i]*R;
-            R*=nums[i];
+        int R = 1;
+        /*从后往前遍历 answer-i */
+        for (int i = len - 1; i >= 0; i--) {
+            answer[i] = answer[i] * R;
+            R *= nums[i];
         }
         return answer;
     }
