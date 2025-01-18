@@ -23,8 +23,11 @@ public class HIndex {
 
     /*计数排序*/
     public int hIndex1(int[] citations) {
+        //结果
         int n = citations.length, tot = 0;
+        /*因为H指数不可能大于总的论文发表数*/
         int[] counter = new int[n + 1];
+        /*引用次数大于文章数量的放最后*/
         for (int i = 0; i < n; i++) {
             if (citations[i] >= n) {
                 counter[n]++;
@@ -32,7 +35,9 @@ public class HIndex {
                 counter[citations[i]]++;
             }
         }
+        /*倒叙遍历counter*/
         for (int i = n; i >= 0; i--) {
+            /**/
             tot += counter[i];
             if (tot >= i) {
                 return i;
@@ -41,10 +46,35 @@ public class HIndex {
         return 0;
     }
 
+    /*二分搜索*/
+    public int hIndex2(int[] citations) {
+        int left=0,right=citations.length;
+        int mid=0,cnt=0;
+        while(left<right){
+            // +1 防止死循环
+            mid=(left+right+1)>>1;
+            cnt=0;
+            for(int i=0;i<citations.length;i++){
+                if(citations[i]>=mid){
+                    cnt++;
+                }
+            }
+            if(cnt>=mid){
+                // 要找的答案在 [mid,right] 区间内
+                left=mid;
+            }else{
+                // 要找的答案在 [0,mid) 区间内
+                right=mid-1;
+            }
+        }
+        return left;
+    }
+
+
 
 
     public static void main(String[] args) {
         HIndex hIndex = new HIndex();
-        System.out.println(hIndex.hIndex(new int[]{3, 0, 6, 1, 5}));
+        System.out.println(hIndex.hIndex1(new int[]{3, 100, 6, 1, 5}));
     }
 }
