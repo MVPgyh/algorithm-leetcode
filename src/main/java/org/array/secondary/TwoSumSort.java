@@ -20,7 +20,7 @@ public class TwoSumSort {
                     return new int[]{i + 1, mid + 1};
                     /*若中间值大于 targt*/
                 } else if (numbers[mid] > target - numbers[i]) {
-                    high = mid + 1;
+                    high = mid -1;
                 } else {
                     low = mid + 1;
                 }
