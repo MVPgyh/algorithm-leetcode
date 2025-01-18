@@ -10,7 +10,8 @@ import java.util.Random;
 public class Test05 {
     @Test
     public  void test01(){
-        Random random = new Random();
-        System.out.println(random.nextInt(2));
+        String s1="abcdefgef";
+        String s2="gef";
+        System.out.println(s1.startsWith(s2,6));
     }
 }
