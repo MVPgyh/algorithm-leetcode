@@ -24,7 +24,7 @@ public class QuicklySort {
             int right = end;//右指针
             while (left < right) {
                 //从右向左找，比base大，right--
-                while (left< right && nums[right] >= base) {
+                while (left< right && nums[right] > base) {
                     right--;
                 }
                 //比base小，替换left所在位置的数字
