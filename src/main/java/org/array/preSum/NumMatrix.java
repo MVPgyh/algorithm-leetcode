@@ -1,4 +1,4 @@
-package org.array.secondary;
+package org.array.preSum;
 
 /*前缀和 自己写出的*/
 class NumMatrix {
