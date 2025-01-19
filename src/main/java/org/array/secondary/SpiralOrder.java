@@ -45,18 +45,22 @@ public class SpiralOrder {
         int l = 0, r = matrix[0].length - 1;
         int u = 0, d = matrix.length - 1;
         while(u <= d && l <= r){
+            /*上遍历*/
             for(int j = l; u <= d && j <= r; j++) {
                 res.add(matrix[u][j]);
             }
             u++;
+            /*右遍历*/
             for(int i = u; l <= r && i <= d; i++){
                 res.add(matrix[i][r]);
             }
             r--;
+            /*下遍历*/
             for(int j = r; u <= d && j >= l; j--) {
                 res.add(matrix[d][j]);
             }
             d--;
+            /*左遍历*/
             for(int i = d; l <= r && i >= u; i--) {
                 res.add(matrix[i][l]);
             }

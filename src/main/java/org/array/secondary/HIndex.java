@@ -36,8 +36,10 @@ public class HIndex {
             }
         }
         /*倒叙遍历counter*/
+        /*如果在某个时刻，tot（即至少被引用了i次的论文总数）大于或等于当前的i（
+        即我们正在检查的引用次数），那么这意味着至少有i篇论文被引用了至少i次。因*/
         for (int i = n; i >= 0; i--) {
-            /**/
+            /*tot表示了至少被引用了i次的论文总数*/
             tot += counter[i];
             if (tot >= i) {
                 return i;
