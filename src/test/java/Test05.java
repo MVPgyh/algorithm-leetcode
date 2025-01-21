@@ -24,4 +24,12 @@ public class Test05 {
         /*加减乘除的优先级高于左右位移*/
         System.out.println(7+1<<2);
     }
+
+
+
+    @Test
+    public void  test02(){
+        String s="-00021";
+        System.out.println(Integer.parseInt(s));
+    }
 }
